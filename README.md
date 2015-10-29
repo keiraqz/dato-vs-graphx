@@ -65,7 +65,7 @@ All the experiments are run on a cluster with 1 master node and 3 work nodes on 
 
 ##Experiments
 
-**Graph Algorithms:** Both Dato and GraphX have graph algorithms Triangle-counting, PageRank and Connected Components. The experiments will be testing all three algorithms on the following datasets.
+**Graph Algorithms:** Both Dato and GraphX have graph algorithms Triangle-counting, PageRank and Connected Components. The experiments will be testing all three algorithms on the following datasets. The sample code can be found: <a href= "https://github.com/keiraqz/dato-vs-graphx/blob/master/dato-dist.py" target="_blank">here</a> for Dato and <a href= "https://github.com/keiraqz/dato-vs-graphx/blob/master/graphx.scala" target="_blank">here</a> for GraphX.
 
 **Dataset:**
 The graph datasets are downloaded from <a href= "https://snap.stanford.edu/data/" target="_blank">Stanford Large Network Dataset Collection</a>. In these experiments, following 4 datasets were used:
