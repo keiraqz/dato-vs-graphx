@@ -5,9 +5,10 @@ Thanks to <a href= "http://insightdataengineering.com/" target="_blank">Insight 
 
 ##Table of Contents
 - <a href= "https://github.com/keiraqz/dato-vs-graphx/blob/master/README.md#settings">Settings</a>
-- <a href= "https://github.com/keiraqz/dato-vs-graphx/blob/master/README.md#data-processing">Data Processing</a>
-- <a href= "https://github.com/keiraqz/dato-vs-graphx/blob/master/README.md#website">Website</a>
-- <a href= "https://github.com/keiraqz/dato-vs-graphx/blob/master/README.md#packages-used-for-the-pipeline">Packages Used for the Pipeline</a>
+- <a href= "https://github.com/keiraqz/dato-vs-graphx/blob/master/README.md#dato">Dato</a>
+- <a href= "https://github.com/keiraqz/dato-vs-graphx/blob/master/README.md#graphx">GraphX</a>
+- <a href= "https://github.com/keiraqz/dato-vs-graphx/blob/master/README.md#results">Results</a>
+- <a href= "https://github.com/keiraqz/dato-vs-graphx/blob/master/README.md#conclusion">Conclusion</a>
 
 
 ##Settings
@@ -29,8 +30,7 @@ The graph datasets are downloaded from <a href= "https://snap.stanford.edu/data/
 All the datasets are in the format of: [source][(delimiter)][destiny]
 
 
-##Data Processing
-<img src="https://github.com/keiraqz/artmosphere/blob/master/img/pipeline.png" alt="alt text" width="600" height="300">
+##Dato
 
 - **Data Ingestion (Kafka):** The datasets for batch and real-time processing are ingested using Kafka. For batch processing, the datasets are stored into HDFS. For real-time processing, the data is streamed into Spark Streaming.
   - Streaming producer: <a href= "https://github.com/keiraqz/artmosphere/blob/master/kafka/my_streaming_producer.py" target="_blank">my\_streaming\_producer.py</a>
@@ -56,33 +56,10 @@ All the datasets are in the format of: [source][(delimiter)][destiny]
 - **Front-end (Flask, Bootstrap, Highcharts):** The frond-end uses Flask as the framework and the website uses JavaScript and Twitter Bootstrap libriries. All the plots are achieved via Highcharts. To visit: <a href="http://www.artmosphere.nyc"  target="_blank">www.artmosphere.nyc</a>
 
 
-##Website
-*Note: Website is down at the termination of the Insight program. However, the video demo of the website is available <a href="https://youtu.be/skzZ7sosC8c"  target="_blank">here</a>.*
-
-<!--<a href="http://www.artmosphere.nyc"  target="_blank">www.artmosphere.nyc</a>-->
-- The artwork information:
-
-<img src="https://github.com/keiraqz/artmosphere/blob/master/img/art_info.png" alt="alt text" width="600">
-
-- Display similar artworks:
-
-<img src="https://github.com/keiraqz/artmosphere/blob/master/img/similar.png" alt="alt text" width="200">
-
-- Plots show in real-time how many people have collected this piece of art within a 5-sec frame:
-
-<img src="https://github.com/keiraqz/artmosphere/blob/master/img/trend.png" alt="alt text" width="300">
-<img src="https://github.com/keiraqz/artmosphere/blob/master/img/trend2.png" alt="alt text" width="300">
-
-- A map shows where all the artworks have been uploaded across the world:
-
-<img src="https://github.com/keiraqz/artmosphere/blob/master/img/map.png" alt="alt text" width="600">
-
-##Presentation Deck
-The presentation slides are available <a href= "http://www.slideshare.net/KeiraZhou2/artmosphere-demo" target="_blank">here</a>.
-
-The video demo of the website is available <a href="https://youtu.be/skzZ7sosC8c"  target="_blank">here</a>.
-
-##Packages Used for the Pipeline
-pyspark, pyspark-cassandra, elasticsearch-hadoop-2.1.0.Beta2.jar
+##GraphX
 
 
+##Results
+
+
+##Conclusion
