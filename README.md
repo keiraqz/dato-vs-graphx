@@ -55,7 +55,7 @@ All the datasets are in the format of: [source][(delimiter)][destiny]. An exampl
 
 - **Dato Distributed:** After you have GraphLab Create installed, now you can move on to install Dato Distributed on a cluster. You will need to download Dato Distributed on your cluster as well as your personalized license file: Dato-Distributed-Services.ini. Here I will go through the basic steps for setting up Dato Distributed on a Hadoop cluster. For more details, please visit <a href= "https://dato.com/learn/userguide/deployment/pipeline-hadoop-setup.html" target="_blank">Setting up Dato Distributed on Hadoop</a>
   - Deploy Dato Distributed: Go to Dato Distributed directory
-    ```
+    ```{bash}
     ./setup_dato-distributed.sh -d <HDFS_DIR_FOR_INSTALL_DATO> (eg. hdfs://your_cluster_ip:9000/dato/tmp)
                                 -k dato_license.ini 
                                 -c <HADOOP_BIN_PATH> (eg. /usr/local/hadoop/etc/hadoop)
