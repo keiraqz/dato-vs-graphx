@@ -112,8 +112,12 @@ All the datasets are in the format of: [source][(delimiter)][destiny]. An exampl
       ```
 
 - PageRank
-    
-  <img src="https://github.com/keiraqz/dato-vs-graphx/blob/master/img/page.png" alt="alt text" width="500" height="300">
+  - The threshold for PageRank is set to 0.001.
+  
+    <img src="https://github.com/keiraqz/dato-vs-graphx/blob/master/img/page.png" alt="alt text" width="500" height="300">
+
+  - It's interesting that Pokec data took longer to process for PageRank algorithm. This may caused by connectivity of the graph.
+
 
 - Connected Components
     
@@ -121,3 +125,4 @@ All the datasets are in the format of: [source][(delimiter)][destiny]. An exampl
 
 
 ##Conclusion
+From the results we can see that Dato has clear advantages over GraphX in terms of execution time for processing large scale graph data. However, it is often necessary to be able to move between table and graph views of the same physical data and to leverage the properties of each view to easily and efficiently express computation. The goal of the GraphX project is to unify graph-parallel and data-parallel computation in one system with a single composable API. Further experiments can be done to compare the overall performance of a specific task that contains both graph algorithms and other data-parallel computation.
