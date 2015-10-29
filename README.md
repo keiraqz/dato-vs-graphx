@@ -33,10 +33,27 @@ All the datasets are in the format of: [source][(delimiter)][destiny]. An exampl
 
 
 ##Dato
-<a href= "https://dato.com/" target="_blank">Dato</a> is a graph-based, asynchronous, high performance, distributed computation framework written in C++. Dato provides 30-days free trial of accessing their products. You can download by registering <a href= "https://dato.com/download/" target="_blank">here</a>.  Following covers the basic of setting up Dato Distributed on AWS.
+<a href= "https://dato.com/" target="_blank">Dato</a> is a graph-based, asynchronous, high performance, distributed computation framework written in C++. Dato provides 30-days free trial of accessing their products. You can download the free trial by registering <a href= "https://dato.com/download/" target="_blank">here</a>.  Following covers the basic of setting up Dato Distributed on AWS.
 
-- **:** The datasets for batch and real-time processing are ingested using Kafka. For batch processing, the datasets are stored into HDFS. For real-time processing, the data is streamed into Spark Streaming.
-  - Streaming producer: <a href= "https://github.com/keiraqz/artmosphere/blob/master/kafka/my_streaming_producer.py" target="_blank">my\_streaming\_producer.py</a>
+- **GraphLab Create:** You need to install GraphLab Create on a local machine to be able to interact with a distributed Dato cluster. To install, simply follow <a href= "https://dato.com/download/install-graphlab-create.html" target="_blank">Dato installation guide</a>. Here, I will also provide the basic steps to set things up in Linux environment.
+  - Downlaod: Assume that you have registered with your email and have received a product key.
+    - run ```sudo pip install --upgrade --no-cache-dir https://get.dato.com/GraphLab-Create/1.6.1/EMAIL/PRODUCT_KEY/GraphLab-Create-License.tar.gz```
+    - Replace EMAIL and PRODUCT_KEY with your personal information and let Dato take care of the rest
+  - Test the Installation: for more details, please visit <a href= "https://dato.com/learn/userguide/install.html" target="_blank">GraphLab Create Getting Started</a>
+
+    ```{python}
+    import graphlab as gl
+    url = 'http://s3.amazonaws.com/dato-datasets/millionsong/song_data.csv'
+    songs = gl.SFrame.read_csv(url)
+    songs['year'].mean()
+    
+    # Regression Model:
+    url = 'http://s3.amazonaws.com/dato-datasets/regression/Housing.csv'
+    x = gl.SFrame.read_csv(url)
+    m = gl.linear_regression.create(x, target='price')
+    ```
+
+
   - Batch producer: <a href= "https://github.com/keiraqz/artmosphere/blob/master/kafka/hdfs_producer.py" target="_blank">hdfs\_producer.py</a>
   - Batch consumer: <a href= "https://github.com/keiraqz/artmosphere/blob/master/kafka/hdfs_consumer.py" target="_blank">hdfs\_consumer.py</a>
 
