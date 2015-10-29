@@ -125,10 +125,10 @@ All the datasets are in the format of: [source][(delimiter)][destiny]. An exampl
 
 
 ##Conclusion
-Although these experiments are quick setups for both of the tools without fine-tune runtime parameters, from the results we still can have some ideas that Dato has clear advantages over GraphX in terms of execution time for processing large scale graph data. Dato is also really easy to deploy. 
+Although these experiments are quick setups for both of the tools without fine-tune runtime parameters, from the results we still can have some ideas that Dato has clear advantages over GraphX in terms of execution time for processing large scale graph data. Dato is also really easy to deploy. However, GraphX is free while Dato charges a service fee after the free trial.
 
-However, it is often necessary to be able to move between table and graph views of the same physical data and to leverage the properties of each view to easily and efficiently express computation. The goal of the GraphX project is to unify graph-parallel and data-parallel computation in one system with a single composable API. 
+In addition, it is often necessary to be able to move between table and graph views of the same physical data and to leverage the properties of each view to easily and efficiently express computation. The goal of the GraphX project is to unify graph-parallel and data-parallel computation in one system with a single composable API. 
 
-Further experiments can be done to compare the overall performance of a specific task that contains both graph algorithms and other data-parallel computation. Also, GraphX is free but Dato is not.
+Further experiments can be done to compare the overall performance of a specific task that contains both graph algorithms and other data-parallel computation.
 
 - Further readings: <a href="http://arxiv.org/pdf/1402.2394.pdf" target="_blank">Here</a> is a really good research paper by UC Berkeley of GraphX.
