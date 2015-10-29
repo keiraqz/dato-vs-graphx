@@ -39,7 +39,7 @@ All the datasets are in the format of: [source][(delimiter)][destiny]. An exampl
   - Downlaod: Assume that you have registered with your email and have received a product key.
     - run ```sudo pip install --upgrade --no-cache-dir https://get.dato.com/GraphLab-Create/1.6.1/EMAIL/PRODUCT_KEY/GraphLab-Create-License.tar.gz```
     - Replace EMAIL and PRODUCT_KEY with your personal information and let Dato take care of the rest
-  - Test the Installation: for more details, please visit <a href= "https://dato.com/learn/userguide/install.html" target="_blank">GraphLab Create Getting Started</a>
+  - Test the Installation: For more details, please visit <a href= "https://dato.com/learn/userguide/install.html" target="_blank">GraphLab Create Getting Started</a>
 
     ```{python}
     import graphlab as gl
@@ -53,30 +53,28 @@ All the datasets are in the format of: [source][(delimiter)][destiny]. An exampl
     m = gl.linear_regression.create(x, target='price')
     ```
 
+- **Dato Distributed:** After you have GraphLab Create installed, now you can move on to install Dato Distributed on a cluster. You will need to download Dato Distributed on your cluster as well as your personalized license file: Dato-Distributed-Services.ini. Here I will go through the basic steps for setting up Dato Distributed on a Hadoop cluster. For more details, please visit <a href= "https://dato.com/learn/userguide/deployment/pipeline-hadoop-setup.html" target="_blank">Setting up Dato Distributed on Hadoop</a>
+  - Deploy Dato Distributed: Go to Dato Distributed directory
+    ```
+    ./setup_dato-distributed.sh -d <HDFS_DIR_FOR_INSTALL_DATO> (eg. hdfs://your_cluster_ip:9000/dato/tmp)
+                                -k dato_license.ini 
+                                -c <HADOOP_BIN_PATH> (eg. /usr/local/hadoop/etc/hadoop)
+                                -p <NODE_TMP_DIR> (eg. /mnt/my-data/dato/tmp)
+    ```
+  - Test the cluster
+    ```{python}
+    import graphlab as gl
 
-  - Batch producer: <a href= "https://github.com/keiraqz/artmosphere/blob/master/kafka/hdfs_producer.py" target="_blank">hdfs\_producer.py</a>
-  - Batch consumer: <a href= "https://github.com/keiraqz/artmosphere/blob/master/kafka/hdfs_consumer.py" target="_blank">hdfs\_consumer.py</a>
-
-- **Batch Processing (HDFS, Spark):** To perform batch processing job, Spark loads the data from HDFS and processed them in a distributed way. The two major batch processing steps for the project is to aggregate the artists upload locations and compute artwork-artwrok similarties. 
-  - Aggreate Locations: <a href= "https://github.com/keiraqz/artmosphere/tree/master/batch_geo" target="_blank">batch\_geo</a>
-    - To excute: run ```bash batch_geo_run.sh```
-  - Compute Similarity: <a href= "https://github.com/keiraqz/artmosphere/blob/master/batch_similarity/compute_similarity.py" target="_blank">compute\_similarity.py</a>
-    - To excute: run ```bash batch_sim_run.sh```
-  
-  The following graph shows the performance analysis of Spark for one the batch processing jobs - aggregating artists upload locations - up to 500GB:
-
-  <img src="https://github.com/keiraqz/artmosphere/blob/master/img/Spark.png" alt="alt text" width="600">
-
-- **Serving Layer (Elasticsearch, Cassandra):** The platform provides a search function that searches a given keyword within the artworks' title. In order to achieve this goal, the metadata of all artworks are stored into Elasticsearch. All artworks and artists are stored in Cassandra tables and can be retrieved by ids. The aggregated artists locations are also stored in Cassandra table, which can be queried by location\_code and timestamp.
-
-- **Stream Processing (Spark Streaming):** Spark Streaming processes the data in micro batches. The job aggregates how many people collected a certain piece of art every 5 seconds and saves the result into a table in Cassandra. The information can be queried by artwork\_id and timestamp.
-  - Streaming Processing: <a href= "https://github.com/keiraqz/artmosphere/tree/master/spark_streaming" target="_blank">spark\_streaming</a>
-    - To excute: run ```bash log_streaming_run.sh```
-
-- **Front-end (Flask, Bootstrap, Highcharts):** The frond-end uses Flask as the framework and the website uses JavaScript and Twitter Bootstrap libriries. All the plots are achieved via Highcharts. To visit: <a href="http://www.artmosphere.nyc"  target="_blank">www.artmosphere.nyc</a>
-
+    # Create cluster
+    c = gl.deploy.hadoop_cluster.create(name='test-cluster',
+                                dato_dist_path='hdfs://your_cluster_ip:9000/dato/tmp',
+                                hadoop_conf_dir='/usr/local/hadoop/etc/hadoop',
+                                num_containers=3)
+    print c
+    ```
 
 ##GraphX
+<a href= "https://spark.apache.org/docs/1.1.0/graphx-programming-guide.html" target="_blank">GraphX</a> is the new (alpha) Spark (written in Scala) API for graphs and graph-parallel computation. At a high-level, GraphX extends the Spark RDD by introducing the Resilient Distributed Property Graph: a directed multigraph with properties attached to each vertex and edge. You will be able to run GraphX after installing Spark.
 
 
 ##Results
