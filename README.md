@@ -33,8 +33,9 @@ All the datasets are in the format of: [source][(delimiter)][destiny]. An exampl
 
 
 ##Dato
+<a href= "https://dato.com/" target="_blank">Dato</a> is a graph-based, asynchronous, high performance, distributed computation framework written in C++. Dato provides 30-days free trial of accessing their products. You can download by registering <a href= "https://dato.com/download/" target="_blank">here</a>.  Following covers the basic of setting up Dato Distributed on AWS.
 
-- **Data Ingestion (Kafka):** The datasets for batch and real-time processing are ingested using Kafka. For batch processing, the datasets are stored into HDFS. For real-time processing, the data is streamed into Spark Streaming.
+- **:** The datasets for batch and real-time processing are ingested using Kafka. For batch processing, the datasets are stored into HDFS. For real-time processing, the data is streamed into Spark Streaming.
   - Streaming producer: <a href= "https://github.com/keiraqz/artmosphere/blob/master/kafka/my_streaming_producer.py" target="_blank">my\_streaming\_producer.py</a>
   - Batch producer: <a href= "https://github.com/keiraqz/artmosphere/blob/master/kafka/hdfs_producer.py" target="_blank">hdfs\_producer.py</a>
   - Batch consumer: <a href= "https://github.com/keiraqz/artmosphere/blob/master/kafka/hdfs_consumer.py" target="_blank">hdfs\_consumer.py</a>
