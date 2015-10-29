@@ -27,7 +27,8 @@ The graph datasets are downloaded from <a href= "https://snap.stanford.edu/data/
 - LiveJournal: <a href= "https://snap.stanford.edu/data/com-LiveJournal.html" target="_blank">com-lj.ungraph.txt.gz</a>
   + Nodes: 3997962 | Edges: 34681189 | Number of triangles: 177820130
 
-All the datasets are in the format of: [source][(delimiter)][destiny]
+All the datasets are in the format of: [source][(delimiter)][destiny].
+
 An example of downloading the datasets from Linux command line:
   - Download: ```wget https://snap.stanford.edu/data/bigdata/communities/com-youtube.ungraph.txt.gz```
   - Unzip: ```gunzip com-youtube.ungraph.txt.gz```
