@@ -30,7 +30,7 @@ The graph datasets are downloaded from <a href= "https://snap.stanford.edu/data/
 All the datasets are in the format of: [source][(delimiter)][destiny].
 
 An example of downloading the datasets from Linux command line:
-  - Download: ```wget https://snap.stanford.edu/data/bigdata/communities/com-youtube.ungraph.txt.gz```
+  - Download: ```wget https://snap.stanford.edu/data/facebook_combined.txt.gz```
   - Unzip: ```gunzip com-youtube.ungraph.txt.gz```
 
 
