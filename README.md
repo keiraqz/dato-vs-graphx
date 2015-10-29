@@ -39,7 +39,7 @@ All the datasets are in the format of: [source][(delimiter)][destiny]. An exampl
   - Downlaod: Assume that you have registered with your email and have received a product key.
     - run ```sudo pip install --upgrade --no-cache-dir https://get.dato.com/GraphLab-Create/1.6.1/EMAIL/PRODUCT_KEY/GraphLab-Create-License.tar.gz```
     - Replace EMAIL and PRODUCT_KEY with your personal information and let Dato take care of the rest
-  - Test the Installation: For more details, please visit <a href= "https://dato.com/learn/userguide/install.html" target="_blank">GraphLab Create Getting Started</a>
+  - Test the Installation: For more details, please visit <a href= "https://dato.com/learn/userguide/install.html" target="_blank">GraphLab Create Getting Started</a>.
 
     ```{python}
     import graphlab as gl
@@ -53,8 +53,9 @@ All the datasets are in the format of: [source][(delimiter)][destiny]. An exampl
     m = gl.linear_regression.create(x, target='price')
     ```
 
-- **Dato Distributed:** After you have GraphLab Create installed, now you can move on to install Dato Distributed on a cluster. You will need to download Dato Distributed on your cluster as well as your personalized license file: Dato-Distributed-Services.ini. Here I will go through the basic steps for setting up Dato Distributed on a Hadoop cluster. For more details, please visit <a href= "https://dato.com/learn/userguide/deployment/pipeline-hadoop-setup.html" target="_blank">Setting up Dato Distributed on Hadoop</a>
+- **Dato Distributed:** After you have GraphLab Create installed, now you can move on to install Dato Distributed on a cluster. You will need to download Dato Distributed on your cluster as well as your personalized license file: Dato-Distributed-Services.ini. Here I will go through the basic steps for setting up Dato Distributed on a Hadoop cluster. For more details, please visit <a href= "https://dato.com/learn/userguide/deployment/pipeline-hadoop-setup.html" target="_blank">Setting up Dato Distributed on Hadoop</a>.
   - Deploy Dato Distributed: Go to Dato Distributed directory
+
     ```{engine='sh'}
     ./setup_dato-distributed.sh -d <HDFS_DIR_FOR_INSTALL_DATO> (eg. hdfs://your_cluster_ip:9000/dato/tmp)
                                 -k dato_license.ini 
