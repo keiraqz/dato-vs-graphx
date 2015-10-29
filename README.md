@@ -70,7 +70,7 @@ All the experiments are run on a cluster with 1 master node and 3 work nodes on 
 
 ##Experiments
 
-**Graph Algorithms:** Both Dato and GraphX have graph algorithms Triangle-counting, PageRank and Connected Components. The experiments will be testing all three algorithms on the following datasets. The sample code can be found: <a href= "https://github.com/keiraqz/dato-vs-graphx/blob/master/dato-dist.py" target="_blank">here</a> for Dato and <a href= "https://github.com/keiraqz/dato-vs-graphx/blob/master/graphx.scala" target="_blank">here</a> for GraphX. The expriments all start with default settings. GraphX is set to 1G per executor memory. Dato has total 4G for GRAPHLAB\_FILEIO\_MAXIMUM\_CACHE\_CAPACITY. GraphX is later set to 2G per executor memory.
+**Graph Algorithms:** Both Dato and GraphX have graph algorithms Triangle-counting, PageRank and Connected Components. The experiments will be testing all three algorithms on the following datasets. The sample code can be found: <a href= "https://github.com/keiraqz/dato-vs-graphx/blob/master/dato-dist.py" target="_blank">dato-dist.py</a> for Dato and <a href= "https://github.com/keiraqz/dato-vs-graphx/blob/master/graphx.scala" target="_blank">graphx.scala</a> for GraphX. The expriments all start with default settings. GraphX is set to 1G per executor memory. Dato has total 4G for GRAPHLAB\_FILEIO\_MAXIMUM\_CACHE\_CAPACITY. GraphX is later set to 2G per executor memory.
 
 **Dataset:**
 The graph datasets are downloaded from <a href= "https://snap.stanford.edu/data/" target="_blank">Stanford Large Network Dataset Collection (SNAP)</a>. In these experiments, following 4 datasets were used:
@@ -125,6 +125,10 @@ All the datasets are in the format of: [source][(delimiter)][destiny]. An exampl
 
 
 ##Conclusion
-Although these experiments are quick setups of both of the tools without fine-tune runtime parameters, from the results we still can have some ideas that Dato has clear advantages over GraphX in terms of execution time for processing large scale graph data. Dato is also really easy to deploy. However, it is often necessary to be able to move between table and graph views of the same physical data and to leverage the properties of each view to easily and efficiently express computation. The goal of the GraphX project is to unify graph-parallel and data-parallel computation in one system with a single composable API. Further experiments can be done to compare the overall performance of a specific task that contains both graph algorithms and other data-parallel computation. Also, GraphX is free but Dato is not.
+Although these experiments are quick setups for both of the tools without fine-tune runtime parameters, from the results we still can have some ideas that Dato has clear advantages over GraphX in terms of execution time for processing large scale graph data. Dato is also really easy to deploy. 
+
+However, it is often necessary to be able to move between table and graph views of the same physical data and to leverage the properties of each view to easily and efficiently express computation. The goal of the GraphX project is to unify graph-parallel and data-parallel computation in one system with a single composable API. 
+
+Further experiments can be done to compare the overall performance of a specific task that contains both graph algorithms and other data-parallel computation. Also, GraphX is free but Dato is not.
 
 - Further readings: <a href="http://arxiv.org/pdf/1402.2394.pdf" target="_blank">Here</a> is a really good research paper by UC Berkeley of GraphX.
