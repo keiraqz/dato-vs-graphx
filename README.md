@@ -38,7 +38,7 @@ All the experiments are run on a cluster with 1 master node and 3 work nodes on 
     m = gl.linear_regression.create(x, target='price')
     ```
 
-- **Dato Distributed:** After you have GraphLab Create installed, now you can move on to install Dato Distributed on a cluster. You will need to download Dato Distributed on your cluster as well as your personalized license file: Dato-Distributed-Services.ini. Here I will go through the basic steps for setting up Dato Distributed on a Hadoop cluster. For more details, please visit <a href= "https://dato.com/learn/userguide/deployment/pipeline-hadoop-setup.html" target="_blank">Setting up Dato Distributed on Hadoop</a>.
+- **Dato Distributed:** After you have GraphLab Create installed, now you can move on to install Dato Distributed on a cluster. You will need to download Dato Distributed on your cluster as well as your personalized license file: Dato-Distributed-Services.ini. Dato utilizes Hadoop YARN cluster configuration. Here I will go through the basic steps for setting up Dato Distributed on a Hadoop cluster. For more details, please visit <a href= "https://dato.com/learn/userguide/deployment/pipeline-hadoop-setup.html" target="_blank">Setting up Dato Distributed on Hadoop</a>.
   - Deploy Dato Distributed: Go to Dato Distributed directory
 
     ```{engine='sh'}
@@ -125,4 +125,6 @@ All the datasets are in the format of: [source][(delimiter)][destiny]. An exampl
 
 
 ##Conclusion
-From the results we can see that Dato has clear advantages over GraphX in terms of execution time for processing large scale graph data. However, it is often necessary to be able to move between table and graph views of the same physical data and to leverage the properties of each view to easily and efficiently express computation. The goal of the GraphX project is to unify graph-parallel and data-parallel computation in one system with a single composable API. Further experiments can be done to compare the overall performance of a specific task that contains both graph algorithms and other data-parallel computation.
+From the results we can see that Dato has clear advantages over GraphX in terms of execution time for processing large scale graph data. Dato is also really easy to deploy. However, it is often necessary to be able to move between table and graph views of the same physical data and to leverage the properties of each view to easily and efficiently express computation. The goal of the GraphX project is to unify graph-parallel and data-parallel computation in one system with a single composable API. Further experiments can be done to compare the overall performance of a specific task that contains both graph algorithms and other data-parallel computation. Also, GraphX is free but Dato is not.
+
+- Further readings: <a href="http://arxiv.org/pdf/1402.2394.pdf" target="_blank">Here</a> is a really good research paper by UC Berkeley of GraphX.
