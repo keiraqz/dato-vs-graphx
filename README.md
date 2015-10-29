@@ -61,7 +61,12 @@ All the experiments are run on a cluster with 1 master node and 3 work nodes on 
 
 ##GraphX
 <a href= "https://spark.apache.org/docs/1.1.0/graphx-programming-guide.html" target="_blank">GraphX</a> is the new (alpha) Spark (written in Scala) API for graphs and graph-parallel computation. At a high-level, GraphX extends the Spark RDD by introducing the Resilient Distributed Property Graph: a directed multigraph with properties attached to each vertex and edge. You will be able to run GraphX after installing Spark.
-
+- To use GraphX, simply import the packages in Spark: 
+ 
+  ```{scala}
+  import org.apache.spark._
+  import org.apache.spark.graphx._
+  ```
 
 ##Experiments
 
