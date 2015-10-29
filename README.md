@@ -92,15 +92,15 @@ All the datasets are in the format of: [source][(delimiter)][destiny]. An exampl
 - Triangle Counting
   - For Triangle Counting, both Dato and GraphX (if it finishes the job) returns the correct answer as listed on the SNAP website.
   
-  <img src="https://github.com/keiraqz/dato-vs-graphx/blob/master/img/tri.png" alt="alt text" width="600" height="350">
+  <img src="https://github.com/keiraqz/dato-vs-graphx/blob/master/img/tri.png" alt="alt text" width="500" height="300">
 
 - PageRank
     
-  <img src="https://github.com/keiraqz/dato-vs-graphx/blob/master/img/page.png" alt="alt text" width="600" height="350">
+  <img src="https://github.com/keiraqz/dato-vs-graphx/blob/master/img/page.png" alt="alt text" width="500" height="300">
 
 - Connected Components
     
-  <img src="https://github.com/keiraqz/dato-vs-graphx/blob/master/img/cc.png" alt="alt text" width="600" height="350">
+  <img src="https://github.com/keiraqz/dato-vs-graphx/blob/master/img/cc.png" alt="alt text" width="500" height="300">
 
 
 ##Conclusion
