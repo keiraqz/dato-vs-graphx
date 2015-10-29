@@ -90,8 +90,8 @@ All the datasets are in the format of: [source][(delimiter)][destiny]. An exampl
 
 ##Results
 - Triangle Counting
-
-For Triangle Counting, both Dato and GraphX (if it finishes the job) returns the correct answer as listed on the SNAP website.
+  - For Triangle Counting, both Dato and GraphX (if it finishes the job) returns the correct answer as listed on the SNAP website.
+  
 
 - PageRank
 
