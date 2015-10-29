@@ -91,6 +91,9 @@ All the datasets are in the format of: [source][(delimiter)][destiny]. An exampl
 ##Results
 - Triangle Counting
   - For Triangle Counting, both Dato and GraphX (if it finishes the job) returns the correct answer as listed on the SNAP website.
+  
+  <img src="https://github.com/keiraqz/dato-vs-graphx/blob/master/img/tri.png" alt="alt text" width="500" height="300">
+
   - Dato: for all datasets, Dato can load and process the graph with default settings. 
   - GraphX: 
     - For Facebook data: Can load and process with default settings. 
@@ -107,8 +110,6 @@ All the datasets are in the format of: [source][(delimiter)][destiny]. An exampl
       ERROR TaskSchedulerImpl: Lost executor 1 on *: remote Rpc client disassociated
       ERROR TaskSchedulerImpl: Lost executor 4 on *: OutOfMemoryError
       ```
-
-  <img src="https://github.com/keiraqz/dato-vs-graphx/blob/master/img/tri.png" alt="alt text" width="500" height="300">
 
 - PageRank
     
