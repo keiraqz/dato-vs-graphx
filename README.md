@@ -18,7 +18,7 @@ All the experiments are run on a cluster with 1 master node and 3 work nodes on 
 
 
 ##Dato
-<a href= "https://dato.com/" target="_blank">Dato</a> is a graph-based, asynchronous, high performance, distributed computation framework written in C++. Dato provides 30-days free trial of accessing their products. You can download the free trial by registering <a href= "https://dato.com/download/" target="_blank">here</a>.  Following covers the basic of setting up Dato Distributed on AWS.
+<a href= "https://dato.com/" target="_blank">Dato</a> is a graph-based, asynchronous, high performance, distributed computation framework written in C++. Dato provides 30-days free trial of accessing their products. You can download the free trial by registering <a href= "https://dato.com/download/" target="_blank">here</a>.  Following covers the basics of setting up Dato Distributed on AWS.
 
 - **GraphLab Create:** You need to install GraphLab Create on a local machine to be able to interact with a distributed Dato cluster. To install, simply follow <a href= "https://dato.com/download/install-graphlab-create.html" target="_blank">Dato installation guide</a>. Here, I will also provide the basic steps to set things up in Linux environment.
   - Downlaod: Assume that you have registered with your email and have received a product key.
@@ -91,7 +91,23 @@ All the datasets are in the format of: [source][(delimiter)][destiny]. An exampl
 ##Results
 - Triangle Counting
   - For Triangle Counting, both Dato and GraphX (if it finishes the job) returns the correct answer as listed on the SNAP website.
-  
+  - Dato: for all datasets, Dato can load and process the graph with default settings. 
+  - GraphX: 
+    - For Facebook data: Can load and process with default settings. 
+    - For YouTube data: Can load the data, but have trouble processing it with 1G executor memory. Increase executor memory to 2G. Worked.
+      - Some errors run into: 
+      
+      ```ERROR TaskSchedulerImpl: Lost executor 1 on 172.31.11.231: remote Rpc client disassociated```
+    - For Pokec and LiveJournal data: Have trouble loading data with 1G executor memory. Increase executor memory to 2G. Data can be loaded but can’t finish the computation for triangle count.
+      - Some errors run into:
+        
+      ``` 
+      java.util.concurrent.TimeoutException: Futures timed out after [120 seconds]
+      Lost executor 2 on *: remote Rpc client disassociated
+      ERROR TaskSchedulerImpl: Lost executor 1 on *: remote Rpc client disassociated
+      ERROR TaskSchedulerImpl: Lost executor 4 on *: OutOfMemoryError
+      ```
+
   <img src="https://github.com/keiraqz/dato-vs-graphx/blob/master/img/tri.png" alt="alt text" width="500" height="300">
 
 - PageRank
