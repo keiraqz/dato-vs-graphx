@@ -73,7 +73,7 @@ All the experiments are run on a cluster with 1 master node and 3 work nodes on 
 **Graph Algorithms:** Both Dato and GraphX have graph algorithms Triangle-counting, PageRank and Connected Components. The experiments will be testing all three algorithms on the following datasets. The sample code can be found: <a href= "https://github.com/keiraqz/dato-vs-graphx/blob/master/dato-dist.py" target="_blank">here</a> for Dato and <a href= "https://github.com/keiraqz/dato-vs-graphx/blob/master/graphx.scala" target="_blank">here</a> for GraphX.
 
 **Dataset:**
-The graph datasets are downloaded from <a href= "https://snap.stanford.edu/data/" target="_blank">Stanford Large Network Dataset Collection</a>. In these experiments, following 4 datasets were used:
+The graph datasets are downloaded from <a href= "https://snap.stanford.edu/data/" target="_blank">Stanford Large Network Dataset Collection (SNAP)</a>. In these experiments, following 4 datasets were used:
 - Facebook: <a href= "https://snap.stanford.edu/data/egonets-Facebook.html" target="_blank">facebook_combined.txt.gz</a>
   + Nodes: 4039 | Edges: 88234 | Number of triangles: 1612010
 - YouTube: <a href= "https://snap.stanford.edu/data/com-Youtube.html" target="_blank">com-youtube.ungraph.txt.gz</a>
@@ -85,10 +85,15 @@ The graph datasets are downloaded from <a href= "https://snap.stanford.edu/data/
 
 All the datasets are in the format of: [source][(delimiter)][destiny]. An example of downloading the datasets from Linux command line:
   - Download: ```wget https://snap.stanford.edu/data/facebook_combined.txt.gz```
-  - Unzip: ```gunzip com-youtube.ungraph.txt.gz```
+  - Unzip: ```gunzip facebook_combined.txt.gz```
 
 
 ##Results
+- Triangle Counting
+For Triangle Counting, both Dato and GraphX returns the correct answer as listed on the SNAP website.
 
+- PageRank
+
+- Connected Components
 
 ##Conclusion
