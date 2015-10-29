@@ -1,4 +1,4 @@
-# dato-vs-graphx
+# Dato vs. GraphX
 Some naive comparisons of two graph processing tools: Dato vs Spark GraphX. 
 Thanks to <a href= "http://insightdataengineering.com/" target="_blank">Insight Data Engineering Fellow Program</a> for providing the cluster to run these experiments.
 
