@@ -111,6 +111,7 @@ All the datasets are in the format of: [source][(delimiter)][destiny]. An exampl
       ERROR TaskSchedulerImpl: Lost executor 1 on *: remote Rpc client disassociated
       ERROR TaskSchedulerImpl: Lost executor 4 on *: OutOfMemoryError
       ```
+    - What I observed was that certain stages within the job kept failing. A stage in Spark will operate on one partition of the RDD at a time (and load the data in that partition into memory) <a href="http://blog.cloudera.com/blog/2015/05/working-with-apache-spark-or-how-i-learned-to-stop-worrying-and-love-the-shuffle/" target="_blank">[1]</a>. Besides increasing the executor memory, another possible solution is to increase the number of partitions of the RDD so that each stage is processing smaller amount of data.
 
 - PageRank
   - The threshold for PageRank is set to 0.001.
